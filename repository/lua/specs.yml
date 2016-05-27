@@ -1,0 +1,15 @@
+name: lua
+desc: a tiny script engine.
+versions:
+    - '5.3.2':
+        packageUrl: 'https://www.lua.org/ftp/lua-5.3.2.tar.gz'
+        workDir: 'lua-5.3.2'
+        pack:
+            - 'make posix'
+        staticLibFiles:
+            - 'src/liblua.a'
+        headerFiles:
+            - 'src/lua.h'
+            - 'src/lua.hpp'
+            - 'src/luaconf.h'
+            - 'src/lauxlib.h'

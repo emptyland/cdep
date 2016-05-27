@@ -1,0 +1,16 @@
+name: glog
+desc: Google Logger
+versions:
+    - '0.3.4':
+        packageUrl: 'https://github.com/google/glog/archive/v0.3.4.zip'
+        workDir: 'glog-0.3.4'
+        pack:
+            - './configure'
+            - 'make'
+            - 'mkdir -p include/glog'
+            - 'cp src/glog/{log_severity.h,logging.h,raw_logging.h,stl_logging.h,vlog_is_on.h} include/glog'
+            - 'cp src/config.h include/glog'
+        staticLibFiles:
+            - '.libs/libglog.a'
+        headerFiles:
+            - 'include/glog'
