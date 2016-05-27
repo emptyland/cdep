@@ -1,0 +1,14 @@
+name: gflags
+desc: Google Flags (options/args parsing)
+versions:
+    - '2.1.2':
+        packageUrl: 'https://github.com/gflags/gflags/archive/v2.1.2.zip'
+        workDir: 'gflags-2.1.2'
+        pack:
+            - 'mkdir -p build'
+            - 'cd build && cmake .. && make'
+        staticLibFiles:
+            - 'build/lib/libgflags.a'
+            - 'build/lib/libgflags_nothreads.a'
+        headerFiles:
+            - 'build/include/gflags'

@@ -7,8 +7,6 @@ import os
 import subprocess
 import shutil
 
-REPOSITORY_PATH = './repository'
-
 def loadYamlToObj(yamlFileName):
     f = open(yamlFileName, 'r')
     obj = yaml.load(f)
@@ -47,12 +45,6 @@ def checkVersion(repertoriesPath, name, version):
         if version in versionObj:
             return None;
     return 'package: %s version: %s not found.' % (name, version)
-
-
-depObj = loadYamlToObj('deps.yml')
-if not 'deps' in depObj:
-    print 'has no dependencies.'
-    exit(1)
 
 def findVersionObj(repertoriesPath, name, version):
     specsFilePath = repertoriesPath + '/' + name + '/specs.yml'
@@ -101,7 +93,7 @@ def updateDependency(repertoriesPath, name, version):
     if versionObj == None:
         raise Exception('version %s not found' % (version))
 
-    fetchPkgScript = 'fetch_package.sh'
+    fetchPkgScript = 'libs/fetch_package.sh'
     subprocess.check_call('bash %s %s %s %s' % (fetchPkgScript, name, \
         versionObj['packageUrl'], versionObj['workDir']), shell=True)
 
@@ -110,6 +102,13 @@ def updateDependency(repertoriesPath, name, version):
     updatePackage(repertoriesPath, name, versionObj)
 
 # print depObj['deps']
+
+REPOSITORY_PATH = './repository'
+
+depObj = loadYamlToObj('deps.yml')
+if not 'deps' in depObj:
+    print 'has no dependencies.'
+    exit(1)
 
 for dep in depObj['deps']:
     result = checkVersion(REPOSITORY_PATH, dep.items()[0][0], dep.items()[0][1]['version'])

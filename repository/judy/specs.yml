@@ -1,0 +1,13 @@
+name: judy
+desc: Judy Array Data Structure.
+versions:
+    - '1.0.5':
+        packageUrl: 'http://downloads.sourceforge.net/project/judy/judy/Judy-1.0.5/Judy-1.0.5.tar.gz'
+        workDir: 'judy-1.0.5'
+        pack:
+            - './configure'
+            - 'make'
+        staticLibFiles:
+            - 'src/obj/.libs/libJudy.a'
+        headerFiles:
+            - 'src/Judy.h'
