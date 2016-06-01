@@ -15,7 +15,7 @@ mkdir -p third-party/include
 mkdir -p third-party/libs
 mkdir -p third-party/${1}
 
-wget ${2} -O "third-party/${1}/${INCOMING_FILE_NAME}"
+wget --no-check-certificate ${2} -O "third-party/${1}/${INCOMING_FILE_NAME}"
 
 cd third-party/${1}
 
