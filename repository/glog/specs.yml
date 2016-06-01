@@ -8,7 +8,7 @@ versions:
             - './configure'
             - 'make'
             - 'mkdir -p include/glog'
-            - 'cp src/glog/{log_severity.h,logging.h,raw_logging.h,stl_logging.h,vlog_is_on.h} include/glog'
+            - 'cp src/glog/*.h include/glog'
             - 'cp src/config.h include/glog'
         staticLibFiles:
             - '.libs/libglog.a'

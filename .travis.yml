@@ -6,8 +6,7 @@ compiler:
     - clang
     - gcc
 
-before_script:
-    - echo 1
-
 script:
     - python cdep.py
+    - ls third-party/include
+    - ls third-party/libs
