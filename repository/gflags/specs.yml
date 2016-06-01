@@ -3,6 +3,7 @@ desc: Google Flags (options/args parsing)
 versions:
     - '2.1.2':
         packageUrl: 'https://github.com/gflags/gflags/archive/v2.1.2.zip'
+        sha256Digest: '907dcd7d1cdf7b56825946fe10b4c6598dc156e239d57c1f79c59e55c25beacf'
         workDir: 'gflags-2.1.2'
         pack:
             - 'mkdir -p build'

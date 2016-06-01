@@ -30,6 +30,13 @@ def readAllIfExist(fileName):
     else:
         return None
 
+def removeIfExist(filePath):
+    if os.path.exists(filePath):
+        if os.path.isdir(filePath):
+            shutil.rmtree(filePath)
+        else:
+            os.unlink(filePath)
+
 def checkVersion(repertoriesPath, name, version):
     path = repertoriesPath + '/' + name
     if not os.path.exists(path):
@@ -88,14 +95,36 @@ def updatePackage(repertoriesPath, name, versionObj):
 
     writeAll(pkgSnapshotPath, name)
 
+def cleanupIfNeed(repertoriesPath, name, version, versionObj):
+    downSnapshotPath = './third-party/' + name + '/.download.snapshot'
+    if not os.path.exists(downSnapshotPath):
+        return True
+
+    packedVersion = readAll(downSnapshotPath)
+    if packedVersion == version:
+        return False
+
+    # cleanup all files
+    shutil.rmtree('./third-party/' + name)
+
+    packedVersionObj = findVersionObj(repertoriesPath, name, packedVersion)
+    for libName in packedVersionObj['staticLibFiles']:
+        removeIfExist('./third-party/libs/' + os.path.basename(libName))
+    for headerName in packedVersionObj['headerFiles']:
+        removeIfExist('./third-party/include/' + os.path.basename(headerName))
+    return True
+
+
 def updateDependency(repertoriesPath, name, version):
     versionObj = findVersionObj(repertoriesPath, name, version)
     if versionObj == None:
         raise Exception('version %s not found' % (version))
 
-    fetchPkgScript = 'libs/fetch_package.sh'
-    subprocess.check_call('bash %s %s %s %s' % (fetchPkgScript, name, \
-        versionObj['packageUrl'], versionObj['workDir']), shell=True)
+    if cleanupIfNeed(repertoriesPath, name, version, versionObj):
+        fetchPkgScript = 'libs/fetch_package.sh'
+        subprocess.check_call('bash %s %s %s %s' % (fetchPkgScript, name, \
+            versionObj['packageUrl'], versionObj['sha256Digest']), shell=True)
+        writeAll('./third-party/' + name + '/.download.snapshot', version)
 
     os.putenv('CDEP_PKG_DIR', repertoriesPath + '/' + name)
 

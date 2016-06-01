@@ -3,6 +3,7 @@ desc: Google Logger
 versions:
     - '0.3.4':
         packageUrl: 'https://github.com/google/glog/archive/v0.3.4.zip'
+        sha256Digest: 'd3483755a4818921b317eaea0428bac95d9d4ec2368a12542c482b7b78814858'
         workDir: 'glog-0.3.4'
         pack:
             - './configure'

@@ -3,6 +3,7 @@ desc: Google Unit Test Framework
 versions:
     - '1.7.0':
         packageUrl: 'https://github.com/google/googletest/archive/release-1.7.0.zip'
+        sha256Digest: 'd3483755a4818921b317eaea0428bac95d9d4ec2368a12542c482b7b78814858'
         workDir: 'googletest-release-1.7.0'
         pack:
             - 'mkdir build'

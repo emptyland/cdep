@@ -3,7 +3,21 @@ desc: a tiny script engine.
 versions:
     - '5.3.2':
         packageUrl: 'https://www.lua.org/ftp/lua-5.3.2.tar.gz'
+        sha256Digest: 'c740c7bb23a936944e1cc63b7c3c5351a8976d7867c5252c8854f7b2af9da68f'
         workDir: 'lua-5.3.2'
+        pack:
+            - 'make posix'
+        staticLibFiles:
+            - 'src/liblua.a'
+        headerFiles:
+            - 'src/lua.h'
+            - 'src/lua.hpp'
+            - 'src/luaconf.h'
+            - 'src/lauxlib.h'
+    - '5.3.1':
+        packageUrl: 'https://www.lua.org/ftp/lua-5.3.1.tar.gz'
+        sha256Digest: '072767aad6cc2e62044a66e8562f51770d941e972dc1e4068ba719cd8bffac17'
+        workDir: 'lua-5.3.1'
         pack:
             - 'make posix'
         staticLibFiles:

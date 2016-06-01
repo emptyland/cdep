@@ -3,6 +3,7 @@ desc: Tom Crypt Library
 versions:
     - '1.17':
         packageUrl: 'https://github.com/libtom/libtomcrypt/releases/download/1.17/crypt-1.17.tar.bz2'
+        sha256Digest: 'e33b47d77a495091c8703175a25c8228aff043140b2554c08a3c3cd71f79d116'
         workDir: 'libtomcrypt-1.17'
         pack:
             - 'mkdir build'
