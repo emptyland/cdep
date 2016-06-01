@@ -1,0 +1,11 @@
+language: c
+
+compiler:
+    - clang
+    - gcc
+
+before_script:
+    - echo 1
+
+script:
+    - ./cdep
