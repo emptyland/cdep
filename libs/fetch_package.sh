@@ -27,6 +27,12 @@ if [[ $? == '0' ]]; then
     echo ${2} > .download.snapshot
 fi
 
+echo ${typeMsg} | grep 'bzip2'
+if [[ $? == '0' ]]; then
+    tar vxf "${INCOMING_FILE_NAME}" || exit 1
+    echo ${2} > .download.snapshot
+fi
+
 echo ${typeMsg} | grep 'Zip'
 if [[ $? == '0' ]]; then
     unzip "${INCOMING_FILE_NAME}" || exit 1

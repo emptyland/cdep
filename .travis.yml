@@ -7,6 +7,7 @@ compiler:
     - gcc
 
 script:
+    - cp libs/deps-example.yml deps.yml
     - python cdep.py
     - ls third-party/include
     - ls third-party/libs

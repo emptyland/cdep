@@ -1,0 +1,19 @@
+name: pcre
+desc: Perl Regex Library
+versions:
+    - '8.38':
+        packageUrl: 'http://downloads.sourceforge.net/project/pcre/pcre/8.38/pcre-8.38.tar.bz2'
+        workDir: 'pcre-8.38'
+        pack:
+            - 'mkdir build'
+            - 'cd build && cmake -DPCRE_SUPPORT_JIT=ON -DPCRE_SUPPORT_UTF=ON -DPCRE_BUILD_PCRE16=ON -DPCRE_BUILD_PCRE32=ON ..'
+            - 'cd build && make'
+            - 'cd build && ./pcre_jit_test'
+        staticLibFiles:
+            - 'build/libpcre.a'
+            - 'build/libpcre16.a'
+            - 'build/libpcre32.a'
+            - 'build/libpcrecpp.a'
+            - 'build/libpcreposix.a'
+        headerFiles:
+            - 'build/pcre.h'
