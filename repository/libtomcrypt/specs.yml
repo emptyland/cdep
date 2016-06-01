@@ -1,9 +1,9 @@
-name: pcre
-desc: Perl Compatible Regular Expressions
+name: libtomcrypt
+desc: Tom Crypt Library
 versions:
-    - '8.38':
-        packageUrl: 'http://downloads.sourceforge.net/project/pcre/pcre/8.38/pcre-8.38.tar.bz2'
-        workDir: 'pcre-8.38'
+    - '1.17':
+        packageUrl: 'https://github.com/libtom/libtomcrypt/releases/download/1.17/crypt-1.17.tar.bz2'
+        workDir: 'libtomcrypt-1.17'
         pack:
             - 'mkdir build'
             - 'cd build && cmake -DPCRE_SUPPORT_JIT=ON -DPCRE_SUPPORT_UTF=ON -DPCRE_BUILD_PCRE16=ON -DPCRE_BUILD_PCRE32=ON ..'
