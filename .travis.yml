@@ -1,5 +1,7 @@
 language: c
 
+sudo: required
+
 compiler:
     - clang
     - gcc
@@ -8,4 +10,4 @@ before_script:
     - echo 1
 
 script:
-    - ./cdep
+    - ./cdep.py
