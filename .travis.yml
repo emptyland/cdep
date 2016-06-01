@@ -10,4 +10,4 @@ before_script:
     - echo 1
 
 script:
-    - ./cdep.py
+    - python cdep.py
