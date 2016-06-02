@@ -1,0 +1,14 @@
+name: sqlite
+desc: A SQL-based embedded database.
+versions:
+    - '3.13.0':
+        packageUrl: 'https://www.sqlite.org/2016/sqlite-autoconf-3130000.tar.gz'
+        sha256Digest: 'e2797026b3310c9d08bd472f6d430058c6dd139ff9d4e30289884ccd9744086b'
+        workDir: 'sqlite-autoconf-3130000'
+        pack:
+            - './configure'
+            - 'make'
+        staticLibFiles:
+            - '.libs/libsqlite3.a'
+        headerFiles:
+            - 'sqlite3.h'

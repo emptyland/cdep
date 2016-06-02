@@ -10,6 +10,12 @@ wget --no-check-certificate ${2} -O "third-party/${1}/${INCOMING_FILE_NAME}"
 
 cd third-party/${1}
 
+digest=$(shasum -a 256 ${INCOMING_FILE_NAME} | awk '{print $1}')
+if [[ ${3} != ${digest} ]]; then
+    echo "check sum fail! need ${3}, expected ${digest}"
+    exit 1
+fi
+
 typeMsg=$(file ${INCOMING_FILE_NAME})
 
 echo ${typeMsg} | grep 'gzip'

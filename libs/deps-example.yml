@@ -2,6 +2,10 @@ name: cdep
 os: posix
 repository:
 deps:
+    - sqlite:
+        version: '3.13.0'
+    - libev:
+        version: '4.22'
     - pcre:
         version: '8.38'
     - lua:
