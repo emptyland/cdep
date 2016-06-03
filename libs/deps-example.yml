@@ -2,6 +2,8 @@ name: cdep
 os: posix
 repository:
 deps:
+    - gmock:
+        version: '1.7.0'
     - hiredis:
         version: '0.13.3'
     - sqlite:
