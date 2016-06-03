@@ -1,4 +1,4 @@
-language: c
+language: cpp
 
 sudo: required
 
@@ -11,6 +11,5 @@ script:
     - python cdep.py
     - ls third-party/include
     - ls third-party/libs
-    - if [[ $CC == 'gcc' ]]; then cd tests && CPP='g++' make fi
-    - if [[ $CC == 'clang' ]]; then cd tests && CPP='clang++' make fi
+    - cd tests && make
     - bash tests/test_all.sh
