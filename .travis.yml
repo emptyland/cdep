@@ -12,4 +12,4 @@ script:
     - ls third-party/include
     - ls third-party/libs
     - cd tests && make
-    - tests/test_all
+    - bash tests/test_all.sh

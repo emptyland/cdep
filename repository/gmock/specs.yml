@@ -1,0 +1,20 @@
+name: gmock
+desc: Google Mock
+versions:
+    - '1.7.0':
+        packageUrl: 'https://github.com/google/googlemock/archive/release-1.7.0.zip'
+        sha256Digest: '407992e9ef17a08339cd383c33dbaff923969cfa01f8e4ceaeea679400016d85'
+        workDir: 'googlemock-release-1.7.0'
+        pack:
+            - 'rm -rf build ../{googletest-release-1.7.0,gtest}'
+            - 'wget https://github.com/google/googletest/archive/release-1.7.0.zip -O ../gtest.zip'
+            - 'cd .. && unzip gtest.zip && rm gtest.zip && mv googletest-release-1.7.0 gtest && cd --'
+            - 'mkdir build'
+            - 'cd build && cmake ..'
+            - 'cd build && make'
+            - 'rm -r ../gtest'
+        staticLibFiles:
+            - 'build/libgmock.a'
+            - 'build/libgmock_main.a'
+        headerFiles:
+            - 'include/gmock'
