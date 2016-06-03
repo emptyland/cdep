@@ -6,23 +6,25 @@ compiler:
     - clang
     - gcc
 
-before_install:
-    - |
-      if [[ $CC == gcc ]]; then
-        sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-        sudo apt-get update
-        sudo apt-get install -y gcc-4.7 g++-4.7
-        sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.6
-        sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.7 40 --slave /usr/bin/g++ g++ /usr/bin/g++-4.7
-        sudo update-alternatives --config gcc
-      else
-        echo ignore
-      fi
+# before_install:
+#     - |
+#       if [[ $CC == gcc ]]; then
+#         sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+#         sudo apt-get update
+#         sudo apt-get install -y gcc-4.7 g++-4.7
+#         sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.6 60 --slave /usr/bin/g++ g++ /usr/bin/g++-4.6
+#         sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-4.7 40 --slave /usr/bin/g++ g++ /usr/bin/g++-4.7
+#         sudo update-alternatives --config gcc
+#         gcc -version
+#         g++ -version
+#       else
+#         echo ignore
+#       fi
 
 script:
     - cp libs/deps-example.yml deps.yml
     - python cdep.py
     - ls third-party/include
     - ls third-party/libs
-    - cd tests && make
-    - bash tests/test_all.sh
+    # - cd tests && make
+    # - bash tests/test_all.sh
