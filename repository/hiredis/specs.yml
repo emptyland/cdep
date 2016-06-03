@@ -1,0 +1,14 @@
+name: hiredis
+desc: Redis client for C/C++
+versions:
+    - '0.13.3':
+        packageUrl: 'https://github.com/redis/hiredis/archive/v0.13.3.zip'
+        sha256Digest: '4b59e275cf4e808645fe82271cf97881e3a3cf42e09e7d0101025621cd0e18b7'
+        docsUrl: 'https://github.com/redis/hiredis/blob/v0.13.3/README.md'
+        workDir: 'hiredis-0.13.3'
+        pack:
+            - 'make'
+        staticLibFiles:
+            - 'libhiredis.a'
+        headerFiles:
+            - 'hiredis.h'
