@@ -7,9 +7,9 @@ compiler:
     - gcc
 
 before_install:
-    - [[ $CC == gcc ]] && sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-    - [[ $CC == gcc ]] && sudo apt-get update
-    - [[ $CC == gcc ]] && sudo apt-get install gcc-4.7
+    - '[[ $CC == gcc ]] && sudo add-apt-repository ppa:ubuntu-toolchain-r/test'
+    - '[[ $CC == gcc ]] && sudo apt-get update'
+    - '[[ $CC == gcc ]] && sudo apt-get install gcc-4.7'
 
 script:
     - cp libs/deps-example.yml deps.yml
