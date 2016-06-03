@@ -21,5 +21,5 @@ script:
     - python cdep.py
     - ls third-party/include
     - ls third-party/libs
-    - cd tests && make
-    - bash tests/test_all.sh
+    # - cd tests && make
+    # - bash tests/test_all.sh
