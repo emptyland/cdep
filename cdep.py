@@ -7,6 +7,8 @@ import os
 import subprocess
 import shutil
 
+CDEP_PATH = os.getenv('CDEP_PATH', default='.')
+
 def loadYamlToObj(yamlFileName):
     f = open(yamlFileName, 'r')
     obj = yaml.load(f)
@@ -116,6 +118,7 @@ def cleanupIfNeed(repertoriesPath, name, version, versionObj):
 
 
 def updateDependency(repertoriesPath, name, version):
+    global CDEP_PATH
     versionObj = findVersionObj(repertoriesPath, name, version)
     if versionObj == None:
         raise Exception('version %s not found' % (version))
@@ -141,7 +144,7 @@ def updateDependency(repertoriesPath, name, version):
 
 # print depObj['deps']
 
-REPOSITORY_PATH = './repository'
+REPOSITORY_PATH = CDEP_PATH + '/repository'
 
 depObj = loadYamlToObj('deps.yml')
 if not 'deps' in depObj:
