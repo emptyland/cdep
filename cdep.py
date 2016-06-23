@@ -124,7 +124,7 @@ def updateDependency(repertoriesPath, name, version):
         raise Exception('version %s not found' % (version))
 
     if cleanupIfNeed(repertoriesPath, name, version, versionObj):
-        lib = 'libs/fetch_package.sh'
+        lib = CDEP_PATH + '/libs/fetch_package.sh'
         subprocess.check_call('bash %s %s %s %s' % (lib, name, \
             versionObj['packageUrl'], versionObj['sha256Digest']), shell=True)
         writeAll('./third-party/' + name + '/.download.snapshot', version)
@@ -133,7 +133,7 @@ def updateDependency(repertoriesPath, name, version):
         if os.path.exists(maySubDep):
             depObj = loadYamlToObj(maySubDep);
             print 'sub dep: %s' % (depObj['name'])
-            lib = 'libs/link_sub_dep.sh'
+            lib = CDEP_PATH + '/libs/link_sub_dep.sh'
             cmd = 'bash %s %s %s' % (lib, name, versionObj['workDir'])
             print cmd
             subprocess.check_call(cmd, shell=True)
