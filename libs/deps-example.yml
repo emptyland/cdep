@@ -22,3 +22,7 @@ deps:
         version: '2.1.2'
     - judy:
         version: '1.0.5'
+    - lzfse:
+        version: 'a99fc29'
+    - snappy:
+        version: '1.1.3'

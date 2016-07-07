@@ -1,0 +1,13 @@
+name: lzfse
+desc: Apple Data Compression Library.
+versions:
+    - 'a99fc29':
+        packageUrl: 'https://github.com/lzfse/lzfse/archive/45912281e3945a09c6ebfa8c6629f6906a99fc29.zip'
+        sha256Digest: 'a0d82b2b78629409fa19e3ea0ef6e622d5266da2d3747356fe3fe9f7463e5e95'
+        workDir: 'lzfse-45912281e3945a09c6ebfa8c6629f6906a99fc29'
+        pack:
+            - 'make'
+        staticLibFiles:
+            - 'build/bin/liblzfse.a'
+        headerFiles:
+            - 'src/lzfse.h'
