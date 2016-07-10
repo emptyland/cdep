@@ -1,6 +1,18 @@
 name: yuki
 desc: a c++ utility library
 versions:
+    - '0.1.5':
+        packageUrl: 'https://github.com/emptyland/yuki/archive/v0.1.5.zip'
+        sha256Digest: '4b0e7ce03f87a0446bc73ddb0278a5c95de4f9581b9d84557689278ce5184c64'
+        workDir: 'yuki-0.1.5'
+        pack:
+            - 'rm -rf cdep'
+            - 'git clone https://github.com/emptyland/cdep.git'
+            - 'make'
+        staticLibFiles:
+            - 'src/libyuki.a'
+        headerFiles:
+            - 'src/yuki'
     - '0.1.4':
         packageUrl: 'https://github.com/emptyland/yuki/archive/v0.1.4.zip'
         sha256Digest: 'b2f95ba097dddc8492bf7357ac61904d1c41292e3ea35dffb56f5a75934d0af6'
