@@ -1,0 +1,18 @@
+name: luajit
+desc: A jit implements for Lua.
+versions:
+    - '2.0.4':
+        packageUrl: 'http://luajit.org/download/LuaJIT-2.0.4.tar.gz'
+        sha256Digest: '620fa4eb12375021bef6e4f237cbd2dd5d49e56beb414bee052c746beef1807d'
+        workDir: 'LuaJIT-2.0.4'
+        pack:
+            - 'make'
+        staticLibFiles:
+            - 'src/libluajit.a'
+        headerFiles:
+            - 'src/lua.h'
+            - 'src/lua.hpp'
+            - 'src/luaconf.h'
+            - 'src/lualib.h'
+            - 'src/lauxlib.h'
+            - 'src/luajit.h'
