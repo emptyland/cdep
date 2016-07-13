@@ -6,7 +6,7 @@ versions:
         sha256Digest: 'b5ebc113d11416b3f92b215d31bf75fd3e97747fcee7ceecf658016a73a0d6e5'
         workDir: 'snappy-1.1.3'
         pack:
-            - 'sed -i -e "s/libtoolize/glibtoolize/g" autogen.sh'
+            #- 'sed -i -e "s/libtoolize/glibtoolize/g" autogen.sh'
             - './autogen.sh'
             - './configure --disable-shared'
             - 'make'
