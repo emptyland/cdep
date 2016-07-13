@@ -22,8 +22,8 @@ deps:
         version: '0.3.4'
     - gflags:
         version: '2.1.2'
-    - judy:
-        version: '1.0.5'
+    # - judy:
+    #     version: '1.0.5'
     - lzfse:
         version: 'a99fc29'
     - snappy:
