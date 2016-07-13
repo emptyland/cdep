@@ -2,7 +2,7 @@ name: pcre
 desc: Perl Compatible Regular Expressions
 versions:
     - '8.38':
-        packageUrl: 'http://downloads.sourceforge.net/project/pcre/pcre/8.38/pcre-8.38.tar.bz2'
+        packageUrl: 'ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.38.tar.bz2'
         sha256Digest: 'b9e02d36e23024d6c02a2e5b25204b3a4fa6ade43e0a5f869f254f49535079df'
         workDir: 'pcre-8.38'
         pack:
