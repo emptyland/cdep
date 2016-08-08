@@ -1,0 +1,15 @@
+name: glfw
+desc: A free, Open Source, multi-platform library for OpenGL, OpenGL ES and Vulkan development on the desktop.
+versions:
+    - '3.2':
+        packageUrl: 'https://github.com/glfw/glfw/archive/3.2.zip'
+        sha256Digest: '8941ccd330906801495685e90d4993fc07491fc972321493918049956755f2ee'
+        workDir: 'glfw-3.2'
+        pack:
+            - 'mkdir build'
+            - 'cd build && cmake ..'
+            - 'cd build && make'
+        staticLibFiles:
+            - 'build/src/libglfw3.a'
+        headerFiles:
+            - 'include/GLFW'

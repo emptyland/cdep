@@ -22,8 +22,8 @@ deps:
         version: '0.3.4'
     - gflags:
         version: '2.1.2'
-    # - judy:
-    #     version: '1.0.5'
+    - judy:
+        version: '1.0.5'
     - lzfse:
         version: 'a99fc29'
     - snappy:
@@ -32,3 +32,7 @@ deps:
         version: '2.6'
     # - crypto++:
     #     version: '5.6.3'
+    - glew:
+        version: '2.0.0'
+    - glfw:
+        version: '3.2'

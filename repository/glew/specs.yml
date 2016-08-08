@@ -1,0 +1,13 @@
+name: glew
+desc: The OpenGL Extension Wrangler Library (GLEW).
+versions:
+    - '2.0.0':
+        packageUrl: 'https://sourceforge.net/projects/glew/files/glew/2.0.0/glew-2.0.0.tgz/download'
+        sha256Digest: 'c572c30a4e64689c342ba1624130ac98936d7af90c3103f9ce12b8a0c5736764'
+        workDir: 'glew-2.0.0'
+        pack:
+            - 'make'
+        staticLibFiles:
+            - 'lib/libGLEW.a'
+        headerFiles:
+            - 'include/GL'
