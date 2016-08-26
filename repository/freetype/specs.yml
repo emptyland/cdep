@@ -9,6 +9,7 @@ versions:
             - './autogen.sh'
             - './configure'
             - 'make'
+            - 'patch -p1 -d include -i "../${CDEP_REPOSITORY_DIR}/header.patch"'
             - 'mv include freetype'
         staticLibFiles:
             - 'objs/.libs/libfreetype.a'

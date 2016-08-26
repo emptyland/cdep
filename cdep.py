@@ -82,11 +82,12 @@ def updatePackage(repertoriesPath, name, versionObj):
 # pakcage lib
     cwd = os.getcwd()
     workDir = './third-party/%s/%s' % (name, versionObj['workDir'])
+    repositoryDir = '../../../' + CDEP_PATH + '/repository/' + name
     os.chdir(workDir)
 
     print 'now packing...'
     for cmd in versionObj['pack']:
-        subprocess.check_call(cmd, shell=True)
+        subprocess.check_call(cmd, shell=True, env={'CDEP_REPOSITORY_DIR': repositoryDir})
     os.chdir(cwd)
 
 # install lib files
