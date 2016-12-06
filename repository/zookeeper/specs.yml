@@ -1,0 +1,20 @@
+name: zookeeper
+desc: zookeeper c client.
+versions:
+    - '3.4.9':
+        packageUrl: 'http://mirrors.hust.edu.cn/apache/zookeeper/zookeeper-3.4.9/zookeeper-3.4.9.tar.gz'
+        sha256Digest: 'e7f340412a61c7934b5143faef8d13529b29242ebfba2eba48169f4a8392f535'
+        workDir: 'zookeeper-3.4.9/src/c'
+        pack:
+            - './configure'
+            - 'make'
+            - 'cp -r include zookeeper'
+            - 'cp generated/zookeeper.jute.h zookeeper'
+        staticLibFiles:
+            - '.libs/libhashtable.a'
+            - '.libs/libzkmt.a'
+            - '.libs/libzkst.a'
+            - '.libs/libzookeeper_mt.a'
+            - '.libs/libzookeeper_st.a'
+        headerFiles:
+            - 'zookeeper'
