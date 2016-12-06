@@ -1,0 +1,54 @@
+diff -ruN zookeeper.origin/recordio.h zookeeper/recordio.h
+--- zookeeper.origin/recordio.h	2016-12-06 14:50:43.000000000 +0800
++++ zookeeper/recordio.h	2016-12-06 14:51:36.000000000 +0800
+@@ -23,7 +23,7 @@
+ #define STRUCT_INITIALIZER(l,r) .l = r
+ #else
+ #define STRUCT_INITIALIZER(l,r)  r
+-#include "winconfig.h"
++#include "zookeeper/winconfig.h"
+ #endif
+ 
+ #ifdef __cplusplus
+diff -ruN zookeeper.origin/zookeeper.h zookeeper/zookeeper.h
+--- zookeeper.origin/zookeeper.h	2016-12-06 14:50:43.000000000 +0800
++++ zookeeper/zookeeper.h	2016-12-06 14:52:28.000000000 +0800
+@@ -29,10 +29,10 @@
+ #include <stdio.h>
+ #include <ctype.h>
+ 
+-#include "proto.h"
+-#include "zookeeper_version.h"
+-#include "recordio.h"
+-#include "zookeeper.jute.h"
++#include "zookeeper/proto.h"
++#include "zookeeper/zookeeper_version.h"
++#include "zookeeper/recordio.h"
++#include "zookeeper/zookeeper.jute.h"
+ 
+ /**
+  * \file zookeeper.h 
+diff -ruN zookeeper.origin/zookeeper.jute.h zookeeper/zookeeper.jute.h
+--- zookeeper.origin/zookeeper.jute.h	2016-12-06 14:50:43.000000000 +0800
++++ zookeeper/zookeeper.jute.h	2016-12-06 14:52:41.000000000 +0800
+@@ -18,7 +18,7 @@
+ 
+ #ifndef __ZOOKEEPER_JUTE__
+ #define __ZOOKEEPER_JUTE__
+-#include "recordio.h"
++#include "zookeeper/recordio.h"
+ 
+ #ifdef __cplusplus
+ extern "C" {
+diff -ruN zookeeper.origin/zookeeper_log.h zookeeper/zookeeper_log.h
+--- zookeeper.origin/zookeeper_log.h	2016-12-06 14:50:43.000000000 +0800
++++ zookeeper/zookeeper_log.h	2016-12-06 14:52:54.000000000 +0800
+@@ -19,7 +19,7 @@
+ #ifndef ZK_LOG_H_
+ #define ZK_LOG_H_
+ 
+-#include <zookeeper.h>
++#include <zookeeper/zookeeper.h>
+ 
+ #ifdef __cplusplus
+ extern "C" {

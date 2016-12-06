@@ -10,6 +10,7 @@ versions:
             - 'make'
             - 'cp -r include zookeeper'
             - 'cp generated/zookeeper.jute.h zookeeper'
+            - 'patch -p1 -d zookeeper -i "../../../${CDEP_REPOSITORY_DIR}/3.4.9.patch"'
         staticLibFiles:
             - '.libs/libhashtable.a'
             - '.libs/libzkmt.a'
