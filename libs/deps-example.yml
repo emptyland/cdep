@@ -36,3 +36,5 @@ deps:
         version: '2.0.0'
     # - glfw:
     #     version: '3.2'
+    - zookeeper:
+        version: '3.4.9'
